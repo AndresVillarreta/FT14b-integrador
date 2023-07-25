@@ -18,6 +18,7 @@ function App() {
             origin={Rick.origin.name}
             image={Rick.image}
             onClose={() => window.alert('Emulamos que se cierra la card')}
+            123
          /> */}
     </div>
   );
