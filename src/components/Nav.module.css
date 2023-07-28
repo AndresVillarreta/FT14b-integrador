@@ -1,0 +1,41 @@
+.container {
+  height: 5%;
+  background-color: black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.container h1 {
+  color: white;
+  position: absolute;
+  left: 40px;
+}
+.container input {
+  height: 30px;
+  margin: 20px;
+  border: 0px;
+  border-radius: 10px;
+  text-align: center;
+}
+.container button {
+  height: 30px;
+  border: 0px;
+  border-radius: 10px;
+  width: 70px;
+  color: black;
+}
+.container img {
+  width: 40px;
+  position: absolute;
+  right: 20px;
+  border-radius: 20px;
+  top: 6px;
+}
+
+.container h3 {
+  color: white;
+  position: absolute;
+  width: 200px;
+  right: 70px;
+  font-family: "Courier New", Courier, monospace;
+}

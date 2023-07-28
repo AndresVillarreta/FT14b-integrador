@@ -1,13 +1,14 @@
 import Card from "./Card";
+import styleCards from "./Cards.module.css";
 
 export default function Cards(props) {
   return (
-    <div>
+    <div className={styleCards.cardsContainer}>
       {props.characters.map((char) => {
         return (
           <Card
-            onClose={() => window.alert("Emulamos que se cierra la card")}
             key={char.id}
+            onClose={() => props.onClose(char.id)}
             id={char.id}
             name={char.name}
             status={char.status}

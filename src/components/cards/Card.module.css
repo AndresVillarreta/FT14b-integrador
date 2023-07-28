@@ -1,0 +1,65 @@
+.cardContainer {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  width: 200px;
+  border-radius: 20px;
+  height: 250px;
+}
+
+.cardContainer img {
+  width: 100%;
+  position: relative;
+  bottom: 100px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.cardContainer h2 {
+  font-size: small;
+}
+
+.cardContainer button {
+  background: red;
+  color: aliceblue;
+  position: relative;
+  border: 0.1px;
+  left: 45%;
+  bottom: 2%;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.cardContainer button:hover {
+  background: black;
+}
+.name {
+  position: relative;
+  z-index: 1;
+  top: 80%;
+  background-color: yellow;
+  width: fit-content;
+}
+.status {
+  z-index: 1;
+  position: relative;
+  top: 10%;
+  background-color: lightskyblue;
+  width: fit-content;
+  left: 85%;
+}
+.species {
+  z-index: 1;
+  position: relative;
+  bottom: 25%;
+  right: 30%;
+}
+.gender {
+  z-index: 1;
+  position: relative;
+  bottom: 36%;
+  right: -30%;
+}
+.origin {
+  z-index: 1;
+  position: relative;
+  bottom: 38%;
+}
