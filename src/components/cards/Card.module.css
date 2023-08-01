@@ -3,8 +3,18 @@
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   width: 200px;
-  border-radius: 20px;
+  border-radius: 20px 0px 20px 0px;
   height: 250px;
+  overflow: hidden;
+  animation: spawn 1s;
+}
+@keyframes spawn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }
 
 .cardContainer img {
@@ -62,4 +72,26 @@
   z-index: 1;
   position: relative;
   bottom: 38%;
+}
+
+@media screen and (max-width: 500px) {
+  .cardContainer {
+    width: 150px;
+    height: 200px;
+  }
+  .name {
+    top: 75%;
+  }
+  .status {
+    left: 80%;
+  }
+  .origin {
+    bottom: 47%;
+  }
+  .species {
+    bottom: 30%;
+  }
+  .gender {
+    bottom: 43%;
+  }
 }

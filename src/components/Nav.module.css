@@ -1,41 +1,29 @@
 .container {
-  height: 5%;
-  background-color: black;
-  align-items: center;
   display: flex;
+  background-color: black;
+  color: white;
   justify-content: center;
+  height: 5vh;
 }
-.container h1 {
-  color: white;
-  position: absolute;
-  left: 40px;
+.interactue {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.container input {
-  height: 30px;
-  margin: 20px;
-  border: 0px;
-  border-radius: 10px;
-  text-align: center;
-}
-.container button {
-  height: 30px;
-  border: 0px;
-  border-radius: 10px;
-  width: 70px;
+.interactue button {
   color: black;
+  background-color: antiquewhite;
+  border: 0;
+  border-radius: 10px;
+  height: 25px;
+  width: auto;
+  cursor: pointer;
 }
-.container img {
-  width: 40px;
-  position: absolute;
-  right: 20px;
-  border-radius: 20px;
-  top: 6px;
+.interactue input {
+  height: 26px;
+  border-radius: 10px;
+  margin: 5px;
 }
-
-.container h3 {
-  color: white;
-  position: absolute;
-  width: 200px;
-  right: 70px;
-  font-family: "Courier New", Courier, monospace;
+.navContainer button {
+  margin: 5px;
 }

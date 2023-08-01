@@ -5,7 +5,6 @@ export default function SearchBar({ onSearch, inputValue }) {
   const saveID = (event) => {
     setId(event.target.value);
   };
-
   return (
     <div>
       <input
