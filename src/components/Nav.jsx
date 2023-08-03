@@ -3,7 +3,13 @@ import SearchBar from "./searchBar/SearchBar";
 import styleNav from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function Nav({ onSearch, randomNumber, delALL }) {
+export default function Nav({
+  onSearch,
+  randomNumber,
+  delALL,
+  access,
+  setAccess,
+}) {
   return (
     <div className={styleNav.container}>
       <div className={styleNav.interactue}>
@@ -19,6 +25,7 @@ export default function Nav({ onSearch, randomNumber, delALL }) {
           <NavLink to={"/about"}>
             <button>About</button>
           </NavLink>
+          <button onClick={() => setAccess(false)}>Log Out</button>
         </div>
       </div>
     </div>
