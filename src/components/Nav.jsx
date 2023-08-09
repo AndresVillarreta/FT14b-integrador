@@ -3,13 +3,7 @@ import SearchBar from "./searchBar/SearchBar";
 import styleNav from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function Nav({
-  onSearch,
-  randomNumber,
-  delALL,
-  access,
-  setAccess,
-}) {
+export default function Nav({ onSearch, randomNumber, delALL, setAccess }) {
   return (
     <div className={styleNav.container}>
       <div className={styleNav.interactue}>
