@@ -9,15 +9,17 @@ import About from "./components/about/About";
 import Detail from "./components/Detail/Detail";
 import Error from "./components/Error/Error.jsx";
 import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites.jsx";
+import Welcome from "./components/Welcome/Welcome.jsx";
 
 function App() {
   const [access, setAccess] = useState(false);
 
   const navigate = useNavigate();
 
-  const EMAIL = "andresvillarreta1@proton.me";
+  const EMAIL = "admin@admin.com";
 
-  const PASSWORD = "30146470";
+  const PASSWORD = "12345678";
 
   const loginLocation = useLocation();
   // se crea el estado characters
@@ -28,11 +30,12 @@ function App() {
     !access && navigate("/");
     // eslint-disable-next-line
   }, [access]);
-
   function login(userData) {
     if (userData.password === PASSWORD && userData.email === EMAIL) {
       setAccess(true);
       navigate("/home");
+    } else {
+      alert("El correo o la contraseña que indicaste es incorrecto");
     }
   }
 
@@ -67,8 +70,6 @@ function App() {
     setCharacters([]);
   };
 
-  console.log(loginLocation.pathname);
-
   return (
     <div>
       {loginLocation.pathname === "/" ? (
@@ -91,10 +92,12 @@ function App() {
           element={
             <div className="App">
               <Cards characters={characters} onClose={onClose} />
+              {characters.length === 0 ? <Welcome /> : ""}
             </div>
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </div>

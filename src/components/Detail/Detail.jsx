@@ -22,13 +22,11 @@ export default function Detail() {
     return setCharacter({});
     // eslint-disable-next-line
   }, [id]);
-  const name = character.origin;
-  console.log(name);
   return (
     <div className={styleDetail.container}>
       <div className={styleDetail.cardContainer}>
         <div className={styleDetail.info}>
-          <NavLink className={styleDetail.link} to={"/home"}>
+          <NavLink className={styleDetail.link} onClick={() => usnav(-1)}>
             <button>Back</button>
           </NavLink>
           <h2>Name: {character.name}</h2>

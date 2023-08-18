@@ -1,97 +1,94 @@
 .cardContainer {
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  width: 200px;
-  border-radius: 20px 0px 20px 0px;
-  height: 250px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 20px 20px 0px;
   overflow: hidden;
-  animation: spawn 1s;
+  margin-right: 20px;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  animation: spawn 1.5s ease;
+  transition: transform 1s ease;
 }
 @keyframes spawn {
   0% {
+    position: relative;
+    top: 50px;
     opacity: 0;
   }
+  99% {
+    position: relative;
+    top: 0px;
+  }
   100% {
-    opacity: 100;
+    position: static;
+    opacity: 1;
   }
 }
-
-.cardContainer img {
-  width: 100%;
-  position: relative;
-  bottom: 100px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
 }
-.cardContainer h2 {
-  font-size: small;
-}
-
-.cardContainer button {
-  background: red;
-  color: aliceblue;
-  position: relative;
-  border: 0.1px;
-  left: 45%;
-  bottom: 2%;
+.btnContainer button {
   cursor: pointer;
-  transition: background 0.5s;
 }
-.cardContainer button:hover {
+.btnContainer button:first-child {
+  width: 100px;
+  border: 0;
+  height: 3vh;
+  border-radius: 20px 20px 20px 0px;
+  transition: background 0.5s ease;
+}
+.btnContainer button:first-child:hover {
+  background: yellow;
+}
+.btnContainer button:nth-child(2) {
+  width: 100px;
+  border: 0;
+  height: 3vh;
+  border-radius: 20px 20px 0px 20px;
+  transition: background 0.5s ease;
+}
+.btnContainer button:nth-child(2):hover {
   background: black;
+  color: red;
 }
-.name {
-  position: relative;
-  z-index: 1;
-  top: 80%;
-  background-color: yellow;
-  width: fit-content;
+.img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
-.status {
-  z-index: 1;
+.img img {
   position: relative;
-  top: 10%;
-  background-color: lightskyblue;
-  width: fit-content;
-  left: 85%;
-}
-.species {
-  z-index: 1;
-  position: relative;
-  bottom: 25%;
-  right: 30%;
-}
-.gender {
-  z-index: 1;
-  position: relative;
-  bottom: 36%;
-  right: -30%;
-}
-.origin {
-  z-index: 1;
-  position: relative;
-  bottom: 38%;
+  width: 100%;
 }
 
-@media screen and (max-width: 500px) {
-  .cardContainer {
-    width: 150px;
-    height: 200px;
-  }
-  .name {
-    top: 75%;
-  }
-  .status {
-    left: 80%;
-  }
-  .origin {
-    bottom: 47%;
-  }
-  .species {
-    bottom: 30%;
-  }
-  .gender {
-    bottom: 43%;
-  }
+h2 {
+  margin: 0;
+}
+.links {
+  position: relative;
+  text-decoration: none;
+  top: 28.7vh;
+  z-index: 2;
+  width: auto;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+.links h2 {
+  font-size: medium;
+  background: yellow;
+  color: black;
+  padding-right: 25px;
+  border-radius: 0px 20px 0px 0px;
+}
+.favRed {
+  background: red;
+}
+.favRed:hover {
+  background: black !important;
 }

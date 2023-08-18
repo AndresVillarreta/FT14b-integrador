@@ -28,7 +28,7 @@
   background: rgb(255, 199, 199);
   width: 95%;
   height: 300px;
-  border-radius: 10%;
+  border-radius: 40px;
 }
 .loginContainer button {
   height: 12%;

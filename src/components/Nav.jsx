@@ -20,6 +20,9 @@ export default function Nav({ onSearch, randomNumber, delALL, setAccess }) {
             <button>About</button>
           </NavLink>
           <button onClick={() => setAccess(false)}>Log Out</button>
+          <NavLink to={"/favorites"}>
+            <button>Favorites</button>
+          </NavLink>
         </div>
       </div>
     </div>

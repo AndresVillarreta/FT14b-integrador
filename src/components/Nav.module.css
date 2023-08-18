@@ -4,6 +4,7 @@
   color: white;
   justify-content: center;
   height: 5vh;
+  position: relative;
 }
 .interactue {
   display: flex;

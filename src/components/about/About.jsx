@@ -9,7 +9,7 @@ export default function About() {
     <div className={styleAbout.container}>
       <div className={styleAbout.infoContainer}>
         <div className={styleAbout.imgText}>
-          <img srcSet={image.img} />
+          <img srcSet={image.img} alt="img" />
           <div className={styleAbout.info}>
             <h1>
               {" "}
