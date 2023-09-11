@@ -17,10 +17,6 @@ function App() {
 
   const navigate = useNavigate();
 
-  const EMAIL = "admin@admin.com";
-
-  const PASSWORD = "12345678";
-
   const loginLocation = useLocation();
   // se crea el estado characters
   const [characters, setCharacters] = useState([]);
@@ -31,31 +27,42 @@ function App() {
     // eslint-disable-next-line
   }, [access]);
 
-  function login(userData) {
+  async function login(userData) {
     const { email, password } = userData;
     const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(data);
-      access && navigate("/home");
-    });
+    try {
+      const { data, error = data.error } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
+      if (!error) {
+        const { access } = data;
+        setAccess(access);
+        access && navigate("/home");
+      }
+    } catch (error) {
+      window.alert(error.message);
+    }
   }
 
-  function onSearch(id) {
-    const fil = characters.find((char) => char.id === parseInt(id));
+  async function onSearch(id) {
+    const fil = characters.some((char) => char.id === id);
     if (!fil) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
-        .then(({ data }) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-            // eslint-disable-next-line
-          } else {
-            window.alert("¡No hay personajes con este ID!");
-          }
-        })
-        .catch((error) => alert(`No existe ningun personaje con la id ${id}`));
+      try {
+        const { data, error = data.error } = await axios(
+          `http://localhost:3001/rickandmorty/character/${id}`
+        );
+        if (!error && data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        }
+      } catch (error) {
+        if (error.message.includes("404")) {
+          window.alert("¡No hay personajes con este ID!");
+        } else {
+          window.alert(error.message);
+        }
+      }
     } else {
-      alert("No se pueden duplicar los personajes buscados");
+      window.alert("¡Ya existe un personaje con esa id!");
     }
   }
 
