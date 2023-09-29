@@ -1,30 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
 .container {
   display: flex;
   background-color: black;
   color: white;
-  justify-content: center;
-  height: 5vh;
-  position: relative;
+  justify-content: space-evenly;
+  height: 8vh;
+  width: 100%;
+  align-items: center;
 }
 .interactue {
   display: flex;
   align-items: center;
   gap: 15px;
+  justify-content: center;
 }
 .interactue button {
   color: black;
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 10px;
-  height: 25px;
-  width: auto;
+  height: 3vw;
+  width: 8vw;
   cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.3vw;
+  transition: background-color 0.4s ease;
+}
+.interactue button:hover {
+  background-color: whitesmoke;
 }
 .interactue input {
-  height: 26px;
+  height: 3vw;
+  padding-left: 10px;
   border-radius: 10px;
-  margin: 5px;
+  margin-right: 15px;
+  width: 25vw;
+  outline: none;
+  border: transparent 1px solid;
 }
-.navContainer button {
-  margin: 5px;
+.interactue input:focus {
+  outline: none;
+}
+.navContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.navlink {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.5vw;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s ease;
+}
+.navlink:hover {
+  border-bottom: 2px solid white;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }

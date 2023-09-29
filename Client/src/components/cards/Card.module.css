@@ -64,15 +64,19 @@
 .img img {
   position: relative;
   width: 100%;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 h2 {
   margin: 0;
+  padding: 0;
+  display: flex;
 }
 .links {
   position: relative;
   text-decoration: none;
-  top: 28.7vh;
+  top: 253px;
   z-index: 2;
   width: auto;
   height: 25px;

@@ -11,9 +11,11 @@ import Error from "./components/Error/Error.jsx";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Welcome from "./components/Welcome/Welcome.jsx";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   const [access, setAccess] = useState(false);
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -108,6 +110,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );

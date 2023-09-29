@@ -47,7 +47,7 @@ function Card(props) {
         </button>
       </div>
       <NavLink to={`/detail/${props.id}`} className={styleCard.links}>
-        <h2 className={styleCard.name}>{props.name}</h2>
+        <h2 className={styleCard.name}>{props.name.split(" ", 2).join(" ")}</h2>
       </NavLink>
       <h2 className={styleCard.gender}>{props.gender}</h2>
       <NavLink to={`/detail/${props.id}`}>
