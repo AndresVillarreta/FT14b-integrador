@@ -2,7 +2,7 @@ const server = require("./app");
 const PORT = 3001;
 const { conn } = require("./DB_connection");
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ alter: true }).then(() => {
   console.log("Database connected");
 
   server.listen(PORT, () => {
