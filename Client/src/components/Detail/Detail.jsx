@@ -10,7 +10,9 @@ export default function Detail() {
   const usnav = useNavigate();
   const [character, setCharacter] = useState({});
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+    axios(
+      `https://rickandmortyapispa.onrender.com/rickandmorty/character/${id}`
+    )
       .then(({ data }) => {
         if (data.name) {
           setCharacter(data);

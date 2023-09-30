@@ -31,7 +31,7 @@ function App() {
 
   async function login(userData) {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
+    const URL = "https://rickandmortyapispa.onrender.com/rickandmorty/login/";
     try {
       const { data, error = data.error } = await axios(
         URL + `?email=${email}&password=${password}`
@@ -51,7 +51,7 @@ function App() {
     if (!fil) {
       try {
         const { data, error = data.error } = await axios(
-          `http://localhost:3001/rickandmorty/character/${id}`
+          `https://rickandmortyapispa.onrender.com/rickandmorty/character/${id}`
         );
         if (!error && data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
